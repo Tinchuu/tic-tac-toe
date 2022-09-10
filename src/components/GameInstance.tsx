@@ -15,21 +15,24 @@ const initialState : GameState = {
 
 
 const GameInstance = () : JSX.Element => {
-        const tileState = useAppSelector(selectState);
-        const player = useAppSelector(selectState2);
-        const isGameOver = useAppSelector(selectIsOver);
-        const dispatch = useAppDispatch();
-    
+    const tileState = useAppSelector(selectState);
+    const player = useAppSelector(selectState2);
+    const isGameOver = useAppSelector(selectIsOver);
+    const dispatch = useAppDispatch();
 
-        // useEffect(() => {
-        //     dispatch(startGame())
-        // }, [dispatch]);
+    useEffect(() => {
+        dispatch(startGame())
+    }, [dispatch]);
 
 
-        // usually uses tileState values
-        return <GameGrid player={initialState.player} tileState={initialState.tileState}/>
-
- }
+    return <Fragment> 
+        {isGameOver ? <div>
+            <h1>Game Over, Player {player == 1 ? 2 : 1} Won!</h1>
+        </div> : 
+        <GameGrid player={player} tileState={tileState}/>
+    }
+    </Fragment>
+}
 
 
 export default GameInstance;

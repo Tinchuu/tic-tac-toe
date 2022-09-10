@@ -1,19 +1,9 @@
 import { Container } from '@mui/material';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 import './App.css';
-import GameGrid from './components/GameGrid';
 import GameInstance from './components/GameInstance';
-import { GameState } from './store/slices/gameSlice';
-
-// const initialState : GameState = {
-//   tileState: [
-//       [0, 0, 0],
-//       [0, 0, 0],
-//       [0, 0, 0]
-//   ],
-//   gameWon: false,
-//   player: 1
-// }
-
+import gameSlice, { GameState } from './store/slices/gameSlice';
 
 function App() {
   return <Container maxWidth="sm">

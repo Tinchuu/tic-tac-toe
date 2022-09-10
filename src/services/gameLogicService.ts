@@ -6,6 +6,7 @@ export const onSquareClick = (x:number, y:number, state: GameState) : GameState 
     newState.tileState[x][y] = state.player;
     newState.player = state.player == 1 ? -1 : 1;
   }
+  state.gameWon = isGameOver(state)
   return newState;
 }
 
