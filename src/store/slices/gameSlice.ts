@@ -37,7 +37,8 @@ export const gameSlice = createSlice({
 
 export const { onMove, startGame } = gameSlice.actions;
 
-export const selectState = (state: RootState) => state.game;
+export const selectState = (state: RootState) => state.game.tileState;
+export const selectState2 = (state: RootState) => state.game.player;
 export const selectIsOver = (state: RootState) => state.game.gameWon;
 
 export default gameSlice.reducer;
