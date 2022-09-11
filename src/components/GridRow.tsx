@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import { useAppDispatch } from "../store/hooks";
-import { GameState, onMove } from "../store/slices/gameSlice";
-import PlayerDisplay from "./PlayerDisplay";
+import { onMove } from "../store/slices/gameSlice";
 import Square from "./Square";
 
 export interface Value {

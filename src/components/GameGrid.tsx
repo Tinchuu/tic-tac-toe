@@ -1,9 +1,6 @@
 import { Grid } from "@mui/material";
-import { useAppDispatch } from "../store/hooks";
-import { GameState, onMove } from "../store/slices/gameSlice";
 import GridRow from "./GridRow";
 import PlayerDisplay from "./PlayerDisplay";
-import Square from "./Square";
 
 export interface Value {
     player: number,
@@ -11,7 +8,6 @@ export interface Value {
 }
 
 const GameGrid = ({player, tileState}: Value) => {
-    let dispatch = useAppDispatch();
     return(
         <div>
             <PlayerDisplay display={player} />

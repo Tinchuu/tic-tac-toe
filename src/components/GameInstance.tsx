@@ -1,18 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { GameState, onMove, selectIsOver, selectState, selectState2, startGame } from "../store/slices/gameSlice";
+import { selectIsOver, selectState, selectState2, startGame } from "../store/slices/gameSlice";
 import GameGrid from "./GameGrid";
-
-const initialState : GameState = {
-    tileState: [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ],
-    gameWon: false,
-    player: 1
-}
-
 
 const GameInstance = () : JSX.Element => {
     const tileState = useAppSelector(selectState);
